@@ -48,4 +48,20 @@ fn main() {
 
     let sum = 5 + 10;
     let difference = 95.5 - 4.3;
+
+    // Mutability
+    let mut x = 10;
+    println!("Initial value: {}", x);
+
+    x = 20;
+    println!("Final value: {}", x);
+
+    // Tuples
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    let (x, y, z) = tup;
+    println!("The value of y is: {}", y);
+
+    let x: (i32, f64, u8) = (500, 6.4, 1);
+    let five_hundred = x.0;
+    let six_point_four = x.1;
 }
