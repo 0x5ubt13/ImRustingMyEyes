@@ -64,4 +64,87 @@ fn main() {
     let x: (i32, f64, u8) = (500, 6.4, 1);
     let five_hundred = x.0;
     let six_point_four = x.1;
+
+    // Control flow
+    // If-else expressions
+    if x < 5 && x > 0 {
+        println!("x is less than 5 and greater than 0");
+    } else if x == 5 || x == 6 {
+        println!("x is equal to 5 or 6");
+    } else {
+        println!("x is greater than 6");
+    }
+
+    // Assigning vars in if statements
+    let condition = true;
+    let number = if condition { 5 } else { 20 };
+
+    println!("The value of number is: {}", number);
+
+    // loops
+    // infinite loop
+    loop {
+        println!("This will loop forever");
+        break; // Remove this line to see the infinite loop
+    }
+
+    // returning values from loop 
+    let mut count = 0;
+    let result = loop {
+        count += 1;
+        if count == 10 {
+            break count * 2; // Return value from the loop
+        }
+    };
+
+    println!("The result of the loop is: {}", result);
+
+    // loop labels
+    'outer: loop {
+        println!("Entered the outer loop");
+        'inner: loop {
+            println!("Entered the inner loop");
+            break 'outer; // Breaks out of the outer loop
+        }
+        println!("This line will not be printed because we broke out of the outer loop");
+    }
+
+    // for loops
+    // manually iterating over a range
+    for i in 1..=5 {
+        println!("The value is: {}", i);
+    }
+
+    // with .iter() method
+    let a = [10, 20, 30, 40, 50];
+    for element in a.iter() {
+        println!("The value is: {}", element);
+    }
+
+    // while loops
+    let mut n = 5;
+    while n != 0 {
+        println!("{}!", n);
+        n -= 1;
+    }
+
+    // match statements
+    let number = 13;
+    match number {
+        1 => println!("One!"),
+        2 => println!("Two!"),
+        3 => println!("Three!"),
+        4 | 5 => println!("Four or Five!"),
+        6..=10 => println!("Between Six and Ten!"),
+        _ => println!("Something else!"), // Catch-all pattern
+    }
+
+    // destructuring with match
+    let point = (3, 5);
+    match point {
+        (0, 0) => println!("Origin"),
+        (x, 0) => println!("On the x-axis at {}", x),
+        (0, y) => println!("On the y-axis at {}", y),
+        (x, y) => println!("Point at ({}, {})", x, y),
+    }
 }
