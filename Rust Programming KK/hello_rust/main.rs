@@ -67,12 +67,13 @@ fn main() {
 
     // Control flow
     // If-else expressions
-    if x < 5 && x > 0 {
+    let x1 = 5;
+    if x1 < 5 && x1 > 0 {
         println!("x is less than 5 and greater than 0");
-    } else if x == 5 || x == 6 {
-        println!("x is equal to 5 or 6");
+    } else if x1 == 5 || x1 == 6 {
+        println!("x1 is equal to 5 or 6");
     } else {
-        println!("x is greater than 6");
+        println!("x1 is greater than 6 or less than 0");
     }
 
     // Assigning vars in if statements
@@ -106,7 +107,7 @@ fn main() {
             println!("Entered the inner loop");
             break 'outer; // Breaks out of the outer loop
         }
-        println!("This line will not be printed because we broke out of the outer loop");
+        //println!("This line will not be printed because we broke out of the outer loop");
     }
 
     // for loops
@@ -139,7 +140,7 @@ fn main() {
         _ => println!("Something else!"), // Catch-all pattern
     }
 
-    // destructuring with match
+    // destructuring with match. Very useful for advent of code for example??
     let point = (3, 5);
     match point {
         (0, 0) => println!("Origin"),
@@ -147,4 +148,6 @@ fn main() {
         (0, y) => println!("On the y-axis at {}", y),
         (x, y) => println!("Point at ({}, {})", x, y),
     }
+
+
 }
